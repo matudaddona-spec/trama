@@ -54,3 +54,13 @@ npm run build
 ```
 
 La base local necesita su migración una sola vez; los pasos están en [EMPEZAR-AQUI.md](EMPEZAR-AQUI.md) y [LEEME.md](LEEME.md).
+
+## Web publicada (Cloudflare + GitHub)
+
+- Dirección: https://trama.matudaddona.workers.dev · Panel: https://trama.matudaddona.workers.dev/admin (ingreso con Google, sólo cuentas autorizadas en `lib/admin-auth.mjs`).
+- Código: repositorio privado `matudaddona-spec/trama` en GitHub.
+- **Cada vez que subís cambios a la rama `main`, Cloudflare arma y publica la web sola** (1 o 2 minutos). El avance se ve en Cloudflare → Workers & Pages → trama → Deployments.
+- Para subir cambios: `git add -A`, `git commit -m "qué cambié"` y `git push`.
+- Base de datos: D1 `trama-db` (su ID está en `cloudflare.json`). Las tablas se crearon con `npm run db:remoto`.
+- Claves en producción (Cloudflare → trama → Settings → Variables and Secrets): `SESSION_SECRET` y `MP_ACCESS_TOKEN` (de prueba). Los datos bancarios `BANK_*` son opcionales. Nunca van en el código.
+- Publicar a mano sin GitHub: `npm run publicar`.
