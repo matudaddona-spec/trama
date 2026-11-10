@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#121212">
+    <title>Administrar stock · TRAMA</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/estilos.css">
+    <link rel="stylesheet" href="/assets/css/administracion.css">
+    <script type="module" src="/assets/js/administracion.js"></script>
+  </head>
+  <body class="administracion">
+    <a class="saltar-contenido" href="#inventario">Saltar al inventario</a>
+    <header class="admin-cabecera admin-contenedor">
+      <a class="marca" href="/" aria-label="TRAMA, volver a la tienda">
+        TRAMA<sup>®</sup>
+      </a>
+      <div class="admin-cabecera-acciones">
+        <a class="acceso-privado" href="/admin/salir">Cerrar sesión</a>
+        <a class="boton-secundario" href="/">Volver a la tienda <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="admin-contenedor">
+      <section class="admin-presentacion" aria-labelledby="admin-titulo">
+        <div><p class="antetitulo">TODO EN UN MISMO LUGAR</p><h1 id="admin-titulo">El stock, al día<span class="titulo-punto">.</span></h1></div>
+        <p>Registrá las ventas y la mercadería que entra.<br>Los cambios se comparten con la tienda.</p>
+      </section>
+
+      <div id="admin-cargando" class="admin-aviso" role="status">Conectando con el inventario…</div>
+      <section id="acceso-denegado" class="admin-acceso" hidden aria-labelledby="acceso-titulo">
+        <p class="antetitulo">PANEL DE ADMINISTRACIÓN</p>
+        <h2 id="acceso-titulo">Necesitás una cuenta autorizada.</h2>
+        <p>Ingresá con la cuenta que administra TRAMA.</p>
+        <a class="boton-primario" href="/admin">Ingresar con Google</a>
+        <a class="boton-texto" href="/">Volver a la tienda</a>
+      </section>
+
+      <div id="admin-panel" hidden>
+        <div class="admin-nota-demostracion"><span class="punto-muestra"></span><p><strong>Inventario de prueba.</strong> Arranca con cantidades ilustrativas. Los movimientos que registres acá quedan guardados; reemplazá las cantidades por las reales antes de vender.</p></div>
+
+        <section id="operacion-pendiente" class="admin-pendiente" hidden aria-labelledby="pendiente-titulo">
+          <div><h2 id="pendiente-titulo">Hay una operación sin respuesta.</h2><p id="pendiente-descripcion"></p><p>Reintentá para consultar o completar esa misma operación. No se volverá a descontar si ya se había registrado.</p></div>
+          <button id="reintentar-operacion" class="boton-primario" type="button">Reintentar operación</button>
+        </section>
+
+        <section class="admin-indicadores" aria-label="Estado del inventario">
+          <article><span>Variantes de producto</span><strong id="total-variantes">—</strong><small>Cada combinación de color y talle.</small></article>
+          <article><span>Unidades disponibles</span><strong id="total-unidades">—</strong><small>Prendas, conjuntos o pares.</small></article>
+          <article><span>Variantes sin stock</span><strong id="total-agotadas">—</strong><small>La tienda no permite agregarlas.</small></article>
+        </section>
+
+        <section id="pedidos" class="admin-seccion" aria-labelledby="pedidos-titulo">
+          <div class="admin-seccion-cabecera"><div><p class="antetitulo">COMPRAS DE LA WEB</p><h2 id="pedidos-titulo">Pedidos</h2></div><button id="actualizar-pedidos" type="button" class="boton-secundario">Actualizar pedidos <span aria-hidden="true">↻</span></button></div>
+          <p class="admin-ayuda">Los pagos con tarjeta o Mercado Pago se confirman solos y descuentan el stock. Las transferencias se confirman acá cuando ves el dinero en la cuenta.</p>
+          <div id="lista-pedidos" class="admin-ventas"></div>
+          <p id="pedidos-vacios" class="admin-sin-resultados" hidden>Todavía no hay pedidos de la web.</p>
+        </section>
+
+        <section id="inventario" class="admin-seccion" aria-labelledby="inventario-titulo">
+          <div class="admin-seccion-cabecera"><div><p class="antetitulo">INVENTARIO COMPARTIDO</p><h2 id="inventario-titulo">Prendas y variantes</h2></div><button id="actualizar-inventario" type="button" class="boton-secundario">Actualizar stock <span aria-hidden="true">↻</span></button></div>
+          <div class="admin-herramientas">
+            <label for="buscar-inventario"><span class="solo-lectores">Buscar producto, color, talle o código</span><input id="buscar-inventario" type="search" placeholder="Buscar prenda, color, talle o código" autocomplete="off"></label>
+            <label for="filtrar-inventario"><span class="solo-lectores">Filtrar por disponibilidad</span><select id="filtrar-inventario"><option value="todos">Todo el inventario</option><option value="disponibles">Con stock</option><option value="agotados">Sin stock</option></select></label>
+          </div>
+          <div class="admin-estado-consulta"><span id="conteo-inventario" aria-live="polite"></span><span id="ultima-consulta"></span></div>
+          <div class="admin-tabla-marco"><table class="admin-tabla"><thead><tr><th scope="col">Prenda</th><th scope="col">Color / talle</th><th scope="col">Disponible</th><th scope="col">Acciones</th></tr></thead><tbody id="filas-inventario"></tbody></table></div>
+          <p id="inventario-sin-resultados" class="admin-sin-resultados" hidden>No encontramos esa prenda o combinación. Probá con otra búsqueda.</p>
+          <p class="admin-ayuda">Registrar una venta descuenta las unidades. Ajustar stock sirve para cargar mercadería o corregir un conteo. Agregar productos a una bolsa o abrir WhatsApp no confirma una venta.</p>
+        </section>
+
+        <section class="admin-seccion" aria-labelledby="ventas-titulo">
+          <div class="admin-seccion-cabecera"><div><p class="antetitulo">HISTORIAL</p><h2 id="ventas-titulo">Ventas registradas</h2></div><span class="admin-consulta-nota">Las más recientes primero</span></div>
+          <div id="lista-ventas" class="admin-ventas"></div>
+          <p id="ventas-vacias" class="admin-sin-resultados" hidden>Todavía no registraste ventas. Elegí una variante del inventario para empezar.</p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="admin-pie admin-contenedor"><span>TRAMA · Administración</span><span>Pagos de prueba: no se cobra dinero real.</span></footer>
+
+    <dialog id="dialogo-venta" class="admin-dialogo" aria-labelledby="venta-titulo">
+      <div class="admin-dialogo-cabecera"><div><p class="antetitulo">DESCONTAR DEL INVENTARIO</p><h2 id="venta-titulo">Registrar venta</h2></div><button class="admin-cerrar" data-cerrar-admin type="button" aria-label="Cerrar registro de venta">×</button></div>
+      <form id="formulario-venta">
+        <div id="venta-producto" class="admin-producto-elegido"></div>
+        <div class="admin-campos-pareja"><label for="venta-cantidad">Cantidad<input id="venta-cantidad" type="number" min="1" step="1" required value="1" data-dato-operacion></label><label for="venta-canal">Origen de la venta<select id="venta-canal" data-dato-operacion><option value="whatsapp">WhatsApp</option><option value="local">Local</option><option value="instagram">Instagram</option><option value="web">Web · venta confirmada</option></select></label></div>
+        <label for="venta-nota">Referencia <span class="opcional">(opcional)</span><input id="venta-nota" type="text" maxlength="400" placeholder="Por ejemplo: pedido del lunes" data-dato-operacion></label>
+        <p id="venta-prevision" class="admin-prevision" aria-live="polite"></p>
+        <p class="admin-ayuda">Confirmá después de concretar la venta. El sistema verifica que esa combinación siga teniendo unidades.</p>
+        <p id="venta-error" class="admin-error" role="alert" hidden></p>
+        <button id="confirmar-venta" class="boton-primario admin-accion-completa" type="submit">Confirmar venta y descontar stock</button>
+      </form>
+    </dialog>
+
+    <dialog id="dialogo-ajuste" class="admin-dialogo" aria-labelledby="ajuste-titulo">
+      <div class="admin-dialogo-cabecera"><div><p class="antetitulo">MERCADERÍA Y CONTEOS</p><h2 id="ajuste-titulo">Ajustar stock</h2></div><button class="admin-cerrar" data-cerrar-admin type="button" aria-label="Cerrar ajuste de stock">×</button></div>
+      <form id="formulario-ajuste">
+        <div id="ajuste-producto" class="admin-producto-elegido"></div>
+        <label for="ajuste-cantidad">Cantidad total disponible<input id="ajuste-cantidad" type="number" min="0" max="1000000" step="1" required data-dato-operacion></label>
+        <label for="ajuste-nota">Motivo <span class="opcional">(opcional)</span><input id="ajuste-nota" type="text" maxlength="400" placeholder="Por ejemplo: ingreso de mercadería o conteo" data-dato-operacion></label>
+        <p class="admin-ayuda">Es la cantidad final, no las unidades que querés sumar. Si el stock cambió mientras lo revisabas, se te pedirá volver a comprobarlo.</p>
+        <p id="ajuste-error" class="admin-error" role="alert" hidden></p>
+        <button id="confirmar-ajuste" class="boton-primario admin-accion-completa" type="submit">Guardar cantidad disponible</button>
+      </form>
+    </dialog>
+
+    <dialog id="dialogo-anular" class="admin-dialogo" aria-labelledby="anular-titulo">
+      <div class="admin-dialogo-cabecera"><div><p class="antetitulo">CORREGIR UNA VENTA</p><h2 id="anular-titulo">Anular registro</h2></div><button class="admin-cerrar" data-cerrar-admin type="button" aria-label="Cerrar anulación de venta">×</button></div>
+      <div id="anular-detalle" class="admin-producto-elegido"></div>
+      <p class="admin-ayuda">Las unidades de esta venta vuelven al inventario una sola vez. El registro queda en el historial. Esta acción no devuelve dinero ni cancela un pago.</p>
+      <p id="anular-error" class="admin-error" role="alert" hidden></p>
+      <button id="confirmar-anulacion" class="boton-primario admin-accion-completa" type="button">Anular venta y devolver stock</button>
+    </dialog>
+
+    <div id="admin-mensaje" class="estado" role="status" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>

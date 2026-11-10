@@ -1,0 +1,8 @@
+# Copiá este archivo como .dev.vars y completá los valores. .dev.vars no se comparte.
+# Access Token DE PRUEBA de Mercado Pago (Mercado Pago Developers → Tus integraciones → Credenciales de prueba)
+MP_ACCESS_TOKEN=
+# Datos para transferencia (si se dejan vacíos se muestran datos de demostración)
+BANK_ALIAS=
+BANK_CBU=
+BANK_HOLDER=
+BANK_NAME=

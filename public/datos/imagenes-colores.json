@@ -1,0 +1,72 @@
+{
+  "version": 2,
+  "modo": "simulacion",
+  "nota": "Una foto por producto y color. Fotos libres de Unsplash, ilustrativas.",
+  "productos": {
+    "TRM-001": {
+      "Negro": "assets/img/productos/remera-oversize-negro.jpg",
+      "Blanco": "assets/img/productos/remera-oversize-blanco.jpg"
+    },
+    "TRM-002": {
+      "Blanco": "assets/img/productos/remera-pesada-blanco.jpg",
+      "Negro": "assets/img/productos/remera-pesada-negro.jpg"
+    },
+    "TRM-003": {
+      "Negro": "assets/img/productos/remera-premium-negro.jpg",
+      "Blanco": "assets/img/productos/remera-premium-blanco.jpg"
+    },
+    "TRM-004": {
+      "Gris": "assets/img/productos/camisa-franela-gris.jpg",
+      "Rojo": "assets/img/productos/camisa-franela-rojo.jpg"
+    },
+    "TRM-005": {
+      "Gris": "assets/img/productos/buzo-canguro-gris.jpg",
+      "Negro": "assets/img/productos/buzo-canguro-negro.jpg",
+      "Marrón": "assets/img/productos/buzo-canguro-marron.jpg"
+    },
+    "TRM-006": {
+      "Blanco": "assets/img/productos/hoodie-heavy-blanco.jpg",
+      "Azul": "assets/img/productos/hoodie-heavy-azul.jpg"
+    },
+    "TRM-007": {
+      "Gris": "assets/img/productos/buzo-redondo-gris.jpg",
+      "Naranja": "assets/img/productos/buzo-redondo-naranja.jpg",
+      "Azul": "assets/img/productos/buzo-redondo-azul.jpg"
+    },
+    "TRM-008": {
+      "Negro": "assets/img/productos/cargo-negro.jpg",
+      "Beige": "assets/img/productos/cargo-beige.jpg"
+    },
+    "TRM-009": {
+      "Azul": "assets/img/productos/jean-baggy-azul.jpg"
+    },
+    "TRM-010": {
+      "Negro": "assets/img/productos/jogger-negro.jpg"
+    },
+    "TRM-011": {
+      "Azul": "assets/img/productos/campera-jean-azul.jpg"
+    },
+    "TRM-012": {
+      "Negro": "assets/img/productos/puffer-negro.jpg",
+      "Blanco": "assets/img/productos/puffer-blanco.jpg",
+      "Bordó": "assets/img/productos/puffer-rojo.jpg"
+    },
+    "TRM-013": {
+      "Marrón": "assets/img/productos/bomber-marron.jpg",
+      "Verde": "assets/img/productos/bomber-verde.jpg"
+    },
+    "TRM-014": {
+      "Blanco": "assets/img/productos/gorra-blanco.jpg",
+      "Gris": "assets/img/productos/gorra-gris.jpg",
+      "Amarillo": "assets/img/productos/gorra-amarillo.jpg"
+    },
+    "TRM-015": {
+      "Negro": "assets/img/productos/gorro-negro.jpg",
+      "Amarillo": "assets/img/productos/gorro-amarillo.jpg"
+    },
+    "TRM-016": {
+      "Crudo": "assets/img/productos/tote-crudo.jpg",
+      "Negro": "assets/img/productos/tote-negro.jpg"
+    }
+  }
+}

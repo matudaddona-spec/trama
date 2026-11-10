@@ -1,0 +1,76 @@
+# Dependencies
+/node_modules/
+/.pnp
+.pnp.*
+# Keep authored Yarn tooling if the project adopts Yarn.
+/.yarn/*
+!/.yarn/patches/
+!/.yarn/plugins/
+!/.yarn/releases/
+!/.yarn/versions/
+
+# Generated builds and framework state
+/dist/
+/.next/
+/.vinext/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Test output
+/coverage/
+
+# Package-manager logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Local environment and keys
+.env*
+.dev.vars*
+*.pem
+
+# Checkout-local tool state
+/.wrangler/
+/.sites-runtime/
+
+# Workspace scaffolding and publication archives
+/.agents/
+/.codex/
+/outputs/
+/work/
+
+# OS metadata
+.DS_Store
+
+# Preferencias y comprobaciones propias del proyecto
+node_modules/
+*.log
+pruebas/capturas/
+.DS_Store
+Thumbs.db
+
+!.env.example
+
+# Bases locales, sus archivos de recuperación y respaldos
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.sqlite3-*
+*.db
+*.db-*
+/backups/
+
+# Resultados locales de revisión; las migraciones SQL de drizzle/ sí se conservan
+/pruebas/resultados/
+/pruebas/capturas/
+
+# Material de claves privadas y ejemplos sin valores secretos
+*.key
+*.p12
+*.pfx
+!.dev.vars.example
+
+# Configuración local del editor
+/.claude/

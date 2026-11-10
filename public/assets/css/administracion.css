@@ -1,0 +1,671 @@
+/* Panel de stock: comparte la identidad de la tienda, con controles de trabajo. */
+.administracion {
+  font-size: 14px;
+}
+
+.admin-contenedor {
+  width: calc(100% - 80px);
+  max-width: 1240px;
+  margin-inline: auto;
+}
+
+.admin-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  min-height: 112px;
+  border-bottom: 1px solid var(--linea);
+}
+
+.admin-cabecera .marca {
+  font-size: 48px;
+}
+
+.admin-cabecera-acciones {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.acceso-privado {
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+.admin-presentacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  padding: 48px 0 30px;
+}
+
+.admin-presentacion h1 {
+  font-family: var(--serif);
+  font-size: clamp(39px, 4.8vw, 62px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -2px;
+  margin-top: 12px;
+}
+
+.admin-presentacion > p {
+  font-size: 12px;
+  color: var(--tinta-suave);
+  line-height: 1.8;
+  padding-bottom: 4px;
+}
+
+.admin-nota-demostracion,
+.admin-aviso {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 15px 18px;
+  background: #ece6dd;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.admin-nota-demostracion .punto-muestra {
+  background: var(--coral);
+  margin-top: 8px;
+}
+
+.admin-indicadores {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 24px 0 34px;
+}
+
+.admin-indicadores article {
+  padding: 23px 25px;
+  background: var(--papel);
+  border: 1px solid var(--linea);
+}
+
+.admin-indicadores span,
+.admin-indicadores small {
+  display: block;
+}
+
+.admin-indicadores span {
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+.admin-indicadores strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 5px 0 7px;
+}
+
+.admin-indicadores small {
+  font-size: 10px;
+  color: var(--tinta-suave);
+}
+
+.admin-seccion {
+  margin: 0 0 44px;
+  padding: 28px;
+  background: var(--papel);
+  border: 1px solid var(--linea);
+}
+
+.admin-seccion-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 24px;
+}
+
+.admin-seccion h2,
+.admin-acceso h2 {
+  font-family: var(--serif);
+  font-size: 33px;
+  font-weight: 400;
+  letter-spacing: -1px;
+  margin-top: 7px;
+}
+
+.admin-herramientas {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 15px;
+}
+
+.admin-herramientas input,
+.admin-herramientas select {
+  margin: 0;
+  min-height: 44px;
+  font-size: 12px;
+}
+
+.admin-estado-consulta {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 15px 0;
+  color: var(--tinta-suave);
+  font-size: 10px;
+}
+
+.admin-tabla-marco {
+  overflow: auto;
+  max-height: 600px;
+  border: 1px solid var(--linea);
+}
+
+.admin-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-tabla th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #eee8df;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  padding: 13px 15px;
+}
+
+.admin-tabla td {
+  padding: 14px 15px;
+  border-top: 1px solid var(--linea);
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.admin-tabla td:first-child {
+  width: 36%;
+}
+
+.admin-tabla strong,
+.admin-tabla code,
+.admin-variante-talle {
+  display: block;
+}
+
+.admin-tabla code {
+  margin-top: 4px;
+  font-size: 9px;
+  color: var(--tinta-suave);
+  overflow-wrap: anywhere;
+}
+
+.admin-variante-talle {
+  color: var(--tinta-suave);
+  font-size: 10px;
+  margin-top: 3px;
+}
+
+.admin-stock {
+  display: inline-block;
+  min-width: 35px;
+  text-align: center;
+  font-weight: 600;
+  background: #e7edcf;
+  padding: 6px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.admin-stock.agotado {
+  color: #7e3c36;
+  background: #f5dfd7;
+  font-size: 10px;
+}
+
+.admin-fila-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.admin-fila-acciones button {
+  border: 1px solid var(--linea);
+  padding: 8px 10px;
+  font-size: 10px;
+  min-height: 35px;
+}
+
+.admin-fila-acciones button:first-child {
+  border-color: var(--tinta);
+}
+
+.admin-fila-acciones button:hover:not(:disabled) {
+  background: var(--crema);
+}
+
+.admin-fila-acciones button:disabled,
+.admin-dialogo button:disabled,
+.admin-pendiente button:disabled {
+  opacity: .45;
+}
+
+.admin-ayuda {
+  color: var(--tinta-suave);
+  font-size: 11px;
+  line-height: 1.8;
+  margin-top: 17px;
+}
+
+.admin-sin-resultados {
+  padding: 35px 15px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--tinta-suave);
+}
+
+.admin-ventas {
+  display: grid;
+  gap: 13px;
+}
+
+.admin-venta {
+  border: 1px solid var(--linea);
+  padding: 19px 21px;
+}
+
+.admin-venta-cabecera,
+.admin-venta-pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.admin-venta-cabecera h3 {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.admin-venta-cabecera p,
+.admin-venta-pie {
+  font-size: 10px;
+  color: var(--tinta-suave);
+}
+
+.admin-venta ul {
+  padding-left: 17px;
+  margin: 14px 0;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.admin-venta-nota {
+  font-size: 11px;
+  padding: 10px 12px;
+  background: var(--crema);
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+
+.admin-venta-pie .boton-texto {
+  color: var(--tinta);
+}
+
+.admin-etiqueta {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 15px;
+  background: #e7edcf;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.admin-etiqueta.anulada {
+  background: #eee7ea;
+  color: var(--tinta-suave);
+}
+
+.admin-consulta-nota {
+  font-size: 10px;
+  color: var(--tinta-suave);
+}
+
+.admin-pendiente {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 20px;
+  background: #f5dfd7;
+  border: 1px solid #d9a38d;
+}
+
+.admin-pendiente h2 {
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+.admin-pendiente p {
+  font-size: 11px;
+  line-height: 1.7;
+  max-width: 690px;
+}
+
+.admin-pendiente button {
+  flex-shrink: 0;
+}
+
+.admin-pie {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--linea);
+  padding: 20px 0 30px;
+  color: var(--tinta-suave);
+  font-size: 10px;
+}
+
+.admin-dialogo {
+  width: 540px;
+  max-width: calc(100vw - 24px);
+  max-height: 94dvh;
+  padding: 30px;
+  color: var(--tinta);
+  background: var(--papel);
+  border: 0;
+  border-radius: 4px;
+  overflow: auto;
+}
+
+.admin-dialogo-cabecera {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.admin-dialogo h2 {
+  font-family: var(--serif);
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: -1px;
+  margin-top: 8px;
+}
+
+.admin-cerrar {
+  border: 1px solid var(--linea);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.admin-producto-elegido {
+  padding: 17px 19px;
+  background: var(--crema);
+  margin-bottom: 21px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.admin-producto-elegido strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.admin-producto-elegido small {
+  color: var(--tinta-suave);
+}
+
+.admin-dialogo label {
+  font-size: 12px;
+  margin-bottom: 18px;
+}
+
+.admin-dialogo input,
+.admin-dialogo select {
+  font-size: 13px;
+  min-height: 44px;
+}
+
+.admin-campos-pareja {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.admin-prevision {
+  padding: 12px 15px;
+  background: #e7edcf;
+  font-size: 12px;
+}
+
+.admin-prevision.invalida {
+  background: #f5dfd7;
+  color: #7e3c36;
+}
+
+.admin-error {
+  padding: 12px 15px;
+  margin: 15px 0;
+  background: #f5dfd7;
+  color: #7e3c36;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.admin-accion-completa {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.admin-acceso {
+  padding: 35px;
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  margin: 20px 0 60px;
+}
+
+.admin-acceso p:not(.antetitulo) {
+  margin: 16px 0 23px;
+  color: var(--tinta-suave);
+  font-size: 13px;
+}
+
+.admin-acceso .boton-texto {
+  display: inline-block;
+  margin-left: 25px;
+}
+
+@media (max-width: 760px) {
+  .admin-contenedor {
+    width: calc(100% - 34px);
+  }
+  .admin-cabecera {
+    min-height: 92px;
+  }
+  .admin-cabecera .marca strong {
+    font-size: 42px;
+  }
+  .acceso-privado {
+    display: none;
+  }
+  .admin-cabecera .boton-secundario {
+    padding: 10px 13px;
+    min-height: 43px;
+    font-size: 11px;
+  }
+  .admin-presentacion {
+    display: block;
+    padding-top: 30px;
+  }
+  .admin-presentacion > p {
+    margin-top: 17px;
+  }
+  .admin-indicadores {
+    gap: 9px;
+  }
+  .admin-indicadores article {
+    padding: 15px 12px;
+  }
+  .admin-indicadores span {
+    font-size: 9px;
+  }
+  .admin-indicadores strong {
+    font-size: 34px;
+  }
+  .admin-indicadores small {
+    font-size: 8px;
+  }
+  .admin-seccion {
+    padding: 20px 14px;
+  }
+  .admin-seccion-cabecera {
+    gap: 15px;
+    align-items: flex-start;
+  }
+  .admin-seccion h2 {
+    font-size: 28px;
+  }
+  .admin-seccion-cabecera .antetitulo {
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+  .admin-seccion-cabecera > button {
+    font-size: 10px;
+    padding: 10px 12px;
+    min-height: 42px;
+  }
+  .admin-herramientas {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+  .admin-estado-consulta {
+    font-size: 9px;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .admin-tabla thead {
+    display: none;
+  }
+  .admin-tabla,
+  .admin-tabla tbody,
+  .admin-tabla tr,
+  .admin-tabla td {
+    display: block;
+  }
+  .admin-tabla td:first-child {
+    width: auto;
+    padding-bottom: 5px;
+    border-top: 0;
+  }
+  .admin-tabla tr {
+    position: relative;
+    padding: 14px 0;
+    border-top: 1px solid var(--linea);
+  }
+  .admin-tabla tr:first-child {
+    border-top: 0;
+  }
+  .admin-tabla td {
+    border: 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .admin-tabla td:nth-child(3) {
+    position: absolute;
+    right: 0;
+    top: 13px;
+  }
+  .admin-tabla td:first-child strong {
+    padding-right: 75px;
+  }
+  .admin-variante-talle {
+    display: inline;
+    margin-left: 8px;
+  }
+  .admin-fila-acciones {
+    margin-top: 9px;
+  }
+  .admin-fila-acciones button {
+    font-size: 11px;
+    min-height: 40px;
+  }
+  .admin-tabla-marco {
+    max-height: 730px;
+  }
+  .admin-venta {
+    padding: 16px;
+  }
+  .admin-venta-cabecera,
+  .admin-venta-pie {
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .admin-venta-cabecera p {
+    max-width: 160px;
+  }
+  .admin-consulta-nota {
+    display: none;
+  }
+  .admin-pendiente {
+    display: block;
+  }
+  .admin-pendiente button {
+    margin-top: 15px;
+    width: 100%;
+  }
+  .admin-pie {
+    display: block;
+    font-size: 9px;
+  }
+  .admin-pie span {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .admin-dialogo {
+    padding: 24px 21px;
+  }
+  .admin-dialogo h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 380px) {
+  .admin-indicadores {
+    grid-template-columns: 1fr;
+  }
+  .admin-indicadores article {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3px 10px;
+  }
+  .admin-indicadores strong {
+    grid-row: 1 / 3;
+    grid-column: 2;
+    margin: 0;
+  }
+  .admin-indicadores small {
+    grid-column: 1;
+  }
+  .admin-campos-pareja {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* Pedidos de la web */
+.admin-pedido .admin-venta-pie { flex-wrap: wrap; gap: 12px; }
+.admin-pedido-acciones { display: inline-flex; gap: 16px; }
+.admin-etiqueta.etiqueta-pagado { background: #1f7a4a; color: #fff; }
+.admin-etiqueta.etiqueta-esperando_pago, .admin-etiqueta.etiqueta-esperando_transferencia { background: var(--senal); color: var(--tinta); }
+.admin-etiqueta.etiqueta-rechazado, .admin-etiqueta.etiqueta-cancelado { background: #f7e3e1; color: #b3261e; }

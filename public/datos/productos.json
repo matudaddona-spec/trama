@@ -1,0 +1,832 @@
+{
+  "modo": "simulacion",
+  "aviso": "Productos, precios, cantidades, talles y ofertas de prueba. Fotos libres de Unsplash.",
+  "productos": [
+    {
+      "id": "TRM-001",
+      "nombre": "Remera Oversize Base",
+      "categoria": "remeras",
+      "descripcion": "Corte amplio, hombros caídos y algodón de 24/1. La remera que va con todo, todos los días.",
+      "precio": 18900,
+      "descuento": 0,
+      "variantes": [
+        {
+          "sku": "TRM-001-NEGRO-S",
+          "color": "Negro",
+          "talle": "S",
+          "stock": 4
+        },
+        {
+          "sku": "TRM-001-NEGRO-M",
+          "color": "Negro",
+          "talle": "M",
+          "stock": 5
+        },
+        {
+          "sku": "TRM-001-NEGRO-L",
+          "color": "Negro",
+          "talle": "L",
+          "stock": 0
+        },
+        {
+          "sku": "TRM-001-NEGRO-XL",
+          "color": "Negro",
+          "talle": "XL",
+          "stock": 3
+        },
+        {
+          "sku": "TRM-001-BLANCO-S",
+          "color": "Blanco",
+          "talle": "S",
+          "stock": 4
+        },
+        {
+          "sku": "TRM-001-BLANCO-M",
+          "color": "Blanco",
+          "talle": "M",
+          "stock": 0
+        },
+        {
+          "sku": "TRM-001-BLANCO-L",
+          "color": "Blanco",
+          "talle": "L",
+          "stock": 7
+        },
+        {
+          "sku": "TRM-001-BLANCO-XL",
+          "color": "Blanco",
+          "talle": "XL",
+          "stock": 5
+        }
+      ]
+    },
+    {
+      "id": "TRM-002",
+      "nombre": "Remera Heavy 220",
+      "categoria": "remeras",
+      "descripcion": "Algodón grueso de 220 g que mantiene la forma lavado tras lavado. Cuello reforzado.",
+      "precio": 22900,
+      "descuento": 15,
+      "variantes": [
+        {
+          "sku": "TRM-002-BLANCO-S",
+          "color": "Blanco",
+          "talle": "S",
+          "stock": 3
+        },
+        {
+          "sku": "TRM-002-BLANCO-M",
+          "color": "Blanco",
+          "talle": "M",
+          "stock": 2
+        },
+        {
+          "sku": "TRM-002-BLANCO-L",
+          "color": "Blanco",
+          "talle": "L",
+          "stock": 7
+        },
+        {
+          "sku": "TRM-002-BLANCO-XL",
+          "color": "Blanco",
+          "talle": "XL",
+          "stock": 5
+        },
+        {
+          "sku": "TRM-002-NEGRO-S",
+          "color": "Negro",
+          "talle": "S",
+          "stock": 0
+        },
+        {
+          "sku": "TRM-002-NEGRO-M",
+          "color": "Negro",
+          "talle": "M",
+          "stock": 4
+        },
+        {
+          "sku": "TRM-002-NEGRO-L",
+          "color": "Negro",
+          "talle": "L",
+          "stock": 2
+        },
+        {
+          "sku": "TRM-002-NEGRO-XL",
+          "color": "Negro",
+          "talle": "XL",
+          "stock": 6
+        }
+      ]
+    },
+    {
+      "id": "TRM-003",
+      "nombre": "Remera Algodón Peinado",
+      "categoria": "remeras",
+      "descripcion": "Calce regular y tela suave al tacto. Básica, liviana y fácil de combinar.",
+      "precio": 16900,
+      "descuento": 0,
+      "variantes": [
+        {
+          "sku": "TRM-003-NEGRO-S",
+          "color": "Negro",
+          "talle": "S",
+          "stock": 3
+        },
+        {
+          "sku": "TRM-003-NEGRO-M",
+          "color": "Negro",
+          "talle": "M",
+          "stock": 4
+        },
+        {
+          "sku": "TRM-003-NEGRO-L",
+          "color": "Negro",
+          "talle": "L",
+          "stock": 0
+        },
+        {
+          "sku": "TRM-003-NEGRO-XL",
+          "color": "Negro",
+          "talle": "XL",
+          "stock": 8
+        },
+        {
+          "sku": "TRM-003-BLANCO-S",
+          "color": "Blanco",
+          "talle": "S",
+          "stock": 8
+        },
+        {
+          "sku": "TRM-003-BLANCO-M",
+          "color": "Blanco",
+          "talle": "M",
+          "stock": 1
+        },
+        {
+          "sku": "TRM-003-BLANCO-L",
+          "color": "Blanco",
+          "talle": "L",
+          "stock": 8
+        },
+        {
+          "sku": "TRM-003-BLANCO-XL",
+          "color": "Blanco",
+          "talle": "XL",
+          "stock": 1
+        }
+      ]
+    },
+    {
+      "id": "TRM-004",
+      "nombre": "Camisa Leñadora Franela",
+      "categoria": "remeras",
+      "descripcion": "Franela cepillada a cuadros con bolsillo en el pecho. Abierta como campera liviana o cerrada sola.",
+      "precio": 39900,
+      "descuento": 0,
+      "variantes": [
+        {
+          "sku": "TRM-004-GRIS-S",
+          "color": "Gris",
+          "talle": "S",
+          "stock": 4
+        },
+        {
+          "sku": "TRM-004-GRIS-M",
+          "color": "Gris",
+          "talle": "M",
+          "stock": 6
+        },
+        {
+          "sku": "TRM-004-GRIS-L",
+          "color": "Gris",
+          "talle": "L",
+          "stock": 2
+        },
+        {
+          "sku": "TRM-004-GRIS-XL",
+          "color": "Gris",
+          "talle": "XL",
+          "stock": 1
+        },
+        {
+          "sku": "TRM-004-ROJO-S",
+          "color": "Rojo",
+          "talle": "S",
+          "stock": 4
+        },
+        {
+          "sku": "TRM-004-ROJO-M",
+          "color": "Rojo",
+          "talle": "M",
+          "stock": 2
+        },
+        {
+          "sku": "TRM-004-ROJO-L",
+          "color": "Rojo",
+          "talle": "L",
+          "stock": 4
+        },
+        {
+          "sku": "TRM-004-ROJO-XL",
+          "color": "Rojo",
+          "talle": "XL",
+          "stock": 2
+        }
+      ]
+    },
+    {
+      "id": "TRM-005",
+      "nombre": "Buzo Canguro Capucha",
+      "categoria": "buzos",
+      "descripcion": "Frisa invisible, bolsillo canguro y capucha con cordón. El buzo de entretiempo por excelencia.",
+      "precio": 45900,
+      "descuento": 0,
+      "variantes": [
+        {
+          "sku": "TRM-005-GRIS-S",
+          "color": "Gris",
+          "talle": "S",
+          "stock": 3
+        },
+        {
+          "sku": "TRM-005-GRIS-M",
+          "color": "Gris",
+          "talle": "M",
+          "stock": 3
+        },
+        {
+          "sku": "TRM-005-GRIS-L",
+          "color": "Gris",
+          "talle": "L",
+          "stock": 3
+        },
+        {
+          "sku": "TRM-005-GRIS-XL",
+          "color": "Gris",
+          "talle": "XL",
+          "stock": 0
+        },
+        {
+          "sku": "TRM-005-NEGRO-S",
+          "color": "Negro",
+          "talle": "S",
+          "stock": 8
+        },
+        {
+          "sku": "TRM-005-NEGRO-M",
+          "color": "Negro",
+          "talle": "M",
+          "stock": 2
+        },
+        {
+          "sku": "TRM-005-NEGRO-L",
+          "color": "Negro",
+          "talle": "L",
+          "stock": 7
+        },
+        {
+          "sku": "TRM-005-NEGRO-XL",
+          "color": "Negro",
+          "talle": "XL",
+          "stock": 4
+        },
+        {
+          "sku": "TRM-005-MARRON-S",
+          "color": "Marrón",
+          "talle": "S",
+          "stock": 2
+        },
+        {
+          "sku": "TRM-005-MARRON-M",
+          "color": "Marrón",
+          "talle": "M",
+          "stock": 5
+        },
+        {
+          "sku": "TRM-005-MARRON-L",
+          "color": "Marrón",
+          "talle": "L",
+          "stock": 3
+        },
+        {
+          "sku": "TRM-005-MARRON-XL",
+          "color": "Marrón",
+          "talle": "XL",
+          "stock": 6
+        }
+      ]
+    },
+    {
+      "id": "TRM-006",
+      "nombre": "Hoodie Heavy Oversize",
+      "categoria": "buzos",
+      "descripcion": "Frisa pesada de 380 g, puños anchos y calce oversize. Abriga sin perder la caída.",
+      "precio": 52900,
+      "descuento": 10,
+      "variantes": [
+        {
+          "sku": "TRM-006-BLANCO-S",
+          "color": "Blanco",
+          "talle": "S",
+          "stock": 5
+        },
+        {
+          "sku": "TRM-006-BLANCO-M",
+          "color": "Blanco",
+          "talle": "M",
+          "stock": 0
+        },
+        {
+          "sku": "TRM-006-BLANCO-L",
+          "color": "Blanco",
+          "talle": "L",
+          "stock": 4
+        },
+        {
+          "sku": "TRM-006-BLANCO-XL",
+          "color": "Blanco",
+          "talle": "XL",
+          "stock": 0
+        },
+        {
+          "sku": "TRM-006-AZUL-S",
+          "color": "Azul",
+          "talle": "S",
+          "stock": 0
+        },
+        {
+          "sku": "TRM-006-AZUL-M",
+          "color": "Azul",
+          "talle": "M",
+          "stock": 3
+        },
+        {
+          "sku": "TRM-006-AZUL-L",
+          "color": "Azul",
+          "talle": "L",
+          "stock": 6
+        },
+        {
+          "sku": "TRM-006-AZUL-XL",
+          "color": "Azul",
+          "talle": "XL",
+          "stock": 5
+        }
+      ]
+    },
+    {
+      "id": "TRM-007",
+      "nombre": "Buzo Cuello Redondo",
+      "categoria": "buzos",
+      "descripcion": "Rústico liviano con cuello, puños y cintura en rib. Ideal para usar con camisa abajo.",
+      "precio": 38900,
+      "descuento": 0,
+      "variantes": [
+        {
+          "sku": "TRM-007-GRIS-S",
+          "color": "Gris",
+          "talle": "S",
+          "stock": 8
+        },
+        {
+          "sku": "TRM-007-GRIS-M",
+          "color": "Gris",
+          "talle": "M",
+          "stock": 2
+        },
+        {
+          "sku": "TRM-007-GRIS-L",
+          "color": "Gris",
+          "talle": "L",
+          "stock": 3
+        },
+        {
+          "sku": "TRM-007-GRIS-XL",
+          "color": "Gris",
+          "talle": "XL",
+          "stock": 4
+        },
+        {
+          "sku": "TRM-007-NARANJA-S",
+          "color": "Naranja",
+          "talle": "S",
+          "stock": 3
+        },
+        {
+          "sku": "TRM-007-NARANJA-M",
+          "color": "Naranja",
+          "talle": "M",
+          "stock": 7
+        },
+        {
+          "sku": "TRM-007-NARANJA-L",
+          "color": "Naranja",
+          "talle": "L",
+          "stock": 4
+        },
+        {
+          "sku": "TRM-007-NARANJA-XL",
+          "color": "Naranja",
+          "talle": "XL",
+          "stock": 3
+        },
+        {
+          "sku": "TRM-007-AZUL-S",
+          "color": "Azul",
+          "talle": "S",
+          "stock": 2
+        },
+        {
+          "sku": "TRM-007-AZUL-M",
+          "color": "Azul",
+          "talle": "M",
+          "stock": 2
+        },
+        {
+          "sku": "TRM-007-AZUL-L",
+          "color": "Azul",
+          "talle": "L",
+          "stock": 6
+        },
+        {
+          "sku": "TRM-007-AZUL-XL",
+          "color": "Azul",
+          "talle": "XL",
+          "stock": 0
+        }
+      ]
+    },
+    {
+      "id": "TRM-008",
+      "nombre": "Pantalón Cargo Ripstop",
+      "categoria": "pantalones",
+      "descripcion": "Gabardina ripstop con bolsillos laterales y botamanga con cordón regulable.",
+      "precio": 42900,
+      "descuento": 10,
+      "variantes": [
+        {
+          "sku": "TRM-008-NEGRO-38",
+          "color": "Negro",
+          "talle": "38",
+          "stock": 6
+        },
+        {
+          "sku": "TRM-008-NEGRO-40",
+          "color": "Negro",
+          "talle": "40",
+          "stock": 7
+        },
+        {
+          "sku": "TRM-008-NEGRO-42",
+          "color": "Negro",
+          "talle": "42",
+          "stock": 8
+        },
+        {
+          "sku": "TRM-008-NEGRO-44",
+          "color": "Negro",
+          "talle": "44",
+          "stock": 8
+        },
+        {
+          "sku": "TRM-008-BEIGE-38",
+          "color": "Beige",
+          "talle": "38",
+          "stock": 7
+        },
+        {
+          "sku": "TRM-008-BEIGE-40",
+          "color": "Beige",
+          "talle": "40",
+          "stock": 6
+        },
+        {
+          "sku": "TRM-008-BEIGE-42",
+          "color": "Beige",
+          "talle": "42",
+          "stock": 5
+        },
+        {
+          "sku": "TRM-008-BEIGE-44",
+          "color": "Beige",
+          "talle": "44",
+          "stock": 4
+        }
+      ]
+    },
+    {
+      "id": "TRM-009",
+      "nombre": "Jean Baggy 90s",
+      "categoria": "pantalones",
+      "descripcion": "Denim rígido de tiro medio y pierna ancha, con lavado clásico de los noventa.",
+      "precio": 49900,
+      "descuento": 0,
+      "variantes": [
+        {
+          "sku": "TRM-009-AZUL-38",
+          "color": "Azul",
+          "talle": "38",
+          "stock": 3
+        },
+        {
+          "sku": "TRM-009-AZUL-40",
+          "color": "Azul",
+          "talle": "40",
+          "stock": 2
+        },
+        {
+          "sku": "TRM-009-AZUL-42",
+          "color": "Azul",
+          "talle": "42",
+          "stock": 3
+        },
+        {
+          "sku": "TRM-009-AZUL-44",
+          "color": "Azul",
+          "talle": "44",
+          "stock": 0
+        }
+      ]
+    },
+    {
+      "id": "TRM-010",
+      "nombre": "Jogger Rústico",
+      "categoria": "pantalones",
+      "descripcion": "Rústico con cintura elastizada y puño en el tobillo. Para la semana y el finde.",
+      "precio": 32900,
+      "descuento": 0,
+      "variantes": [
+        {
+          "sku": "TRM-010-NEGRO-S",
+          "color": "Negro",
+          "talle": "S",
+          "stock": 6
+        },
+        {
+          "sku": "TRM-010-NEGRO-M",
+          "color": "Negro",
+          "talle": "M",
+          "stock": 6
+        },
+        {
+          "sku": "TRM-010-NEGRO-L",
+          "color": "Negro",
+          "talle": "L",
+          "stock": 2
+        },
+        {
+          "sku": "TRM-010-NEGRO-XL",
+          "color": "Negro",
+          "talle": "XL",
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "id": "TRM-011",
+      "nombre": "Campera de Jean Trucker",
+      "categoria": "camperas",
+      "descripcion": "La campera de jean de siempre: botones metálicos, bolsillos con tapa y calce recto.",
+      "precio": 64900,
+      "descuento": 0,
+      "variantes": [
+        {
+          "sku": "TRM-011-AZUL-S",
+          "color": "Azul",
+          "talle": "S",
+          "stock": 3
+        },
+        {
+          "sku": "TRM-011-AZUL-M",
+          "color": "Azul",
+          "talle": "M",
+          "stock": 3
+        },
+        {
+          "sku": "TRM-011-AZUL-L",
+          "color": "Azul",
+          "talle": "L",
+          "stock": 5
+        },
+        {
+          "sku": "TRM-011-AZUL-XL",
+          "color": "Azul",
+          "talle": "XL",
+          "stock": 3
+        }
+      ]
+    },
+    {
+      "id": "TRM-012",
+      "nombre": "Campera Puffer Urbana",
+      "categoria": "camperas",
+      "descripcion": "Inflada liviana con relleno de guata siliconada, cuello alto y cierre a dos vías.",
+      "precio": 89900,
+      "descuento": 20,
+      "variantes": [
+        {
+          "sku": "TRM-012-NEGRO-S",
+          "color": "Negro",
+          "talle": "S",
+          "stock": 3
+        },
+        {
+          "sku": "TRM-012-NEGRO-M",
+          "color": "Negro",
+          "talle": "M",
+          "stock": 8
+        },
+        {
+          "sku": "TRM-012-NEGRO-L",
+          "color": "Negro",
+          "talle": "L",
+          "stock": 4
+        },
+        {
+          "sku": "TRM-012-NEGRO-XL",
+          "color": "Negro",
+          "talle": "XL",
+          "stock": 7
+        },
+        {
+          "sku": "TRM-012-BLANCO-S",
+          "color": "Blanco",
+          "talle": "S",
+          "stock": 5
+        },
+        {
+          "sku": "TRM-012-BLANCO-M",
+          "color": "Blanco",
+          "talle": "M",
+          "stock": 4
+        },
+        {
+          "sku": "TRM-012-BLANCO-L",
+          "color": "Blanco",
+          "talle": "L",
+          "stock": 1
+        },
+        {
+          "sku": "TRM-012-BLANCO-XL",
+          "color": "Blanco",
+          "talle": "XL",
+          "stock": 8
+        },
+        {
+          "sku": "TRM-012-BORDO-S",
+          "color": "Bordó",
+          "talle": "S",
+          "stock": 2
+        },
+        {
+          "sku": "TRM-012-BORDO-M",
+          "color": "Bordó",
+          "talle": "M",
+          "stock": 0
+        },
+        {
+          "sku": "TRM-012-BORDO-L",
+          "color": "Bordó",
+          "talle": "L",
+          "stock": 1
+        },
+        {
+          "sku": "TRM-012-BORDO-XL",
+          "color": "Bordó",
+          "talle": "XL",
+          "stock": 6
+        }
+      ]
+    },
+    {
+      "id": "TRM-013",
+      "nombre": "Campera Bomber",
+      "categoria": "camperas",
+      "descripcion": "Bomber de nylon con forro, bolsillo para el celular y rib en puños y cintura.",
+      "precio": 74900,
+      "descuento": 0,
+      "variantes": [
+        {
+          "sku": "TRM-013-MARRON-S",
+          "color": "Marrón",
+          "talle": "S",
+          "stock": 5
+        },
+        {
+          "sku": "TRM-013-MARRON-M",
+          "color": "Marrón",
+          "talle": "M",
+          "stock": 7
+        },
+        {
+          "sku": "TRM-013-MARRON-L",
+          "color": "Marrón",
+          "talle": "L",
+          "stock": 2
+        },
+        {
+          "sku": "TRM-013-MARRON-XL",
+          "color": "Marrón",
+          "talle": "XL",
+          "stock": 7
+        },
+        {
+          "sku": "TRM-013-VERDE-S",
+          "color": "Verde",
+          "talle": "S",
+          "stock": 0
+        },
+        {
+          "sku": "TRM-013-VERDE-M",
+          "color": "Verde",
+          "talle": "M",
+          "stock": 0
+        },
+        {
+          "sku": "TRM-013-VERDE-L",
+          "color": "Verde",
+          "talle": "L",
+          "stock": 0
+        },
+        {
+          "sku": "TRM-013-VERDE-XL",
+          "color": "Verde",
+          "talle": "XL",
+          "stock": 4
+        }
+      ]
+    },
+    {
+      "id": "TRM-014",
+      "nombre": "Gorra Six Panel",
+      "categoria": "accesorios",
+      "descripcion": "Gabardina de algodón con visera curva y regulador metálico atrás.",
+      "precio": 15900,
+      "descuento": 0,
+      "variantes": [
+        {
+          "sku": "TRM-014-BLANCO-UNICO",
+          "color": "Blanco",
+          "talle": "Único",
+          "stock": 7
+        },
+        {
+          "sku": "TRM-014-GRIS-UNICO",
+          "color": "Gris",
+          "talle": "Único",
+          "stock": 7
+        },
+        {
+          "sku": "TRM-014-AMARILLO-UNICO",
+          "color": "Amarillo",
+          "talle": "Único",
+          "stock": 1
+        }
+      ]
+    },
+    {
+      "id": "TRM-015",
+      "nombre": "Gorro de Lana Doblado",
+      "categoria": "accesorios",
+      "descripcion": "Tejido acanalado con doblez. Calentito y sin picar.",
+      "precio": 12900,
+      "descuento": 0,
+      "variantes": [
+        {
+          "sku": "TRM-015-NEGRO-UNICO",
+          "color": "Negro",
+          "talle": "Único",
+          "stock": 3
+        },
+        {
+          "sku": "TRM-015-AMARILLO-UNICO",
+          "color": "Amarillo",
+          "talle": "Único",
+          "stock": 2
+        }
+      ]
+    },
+    {
+      "id": "TRM-016",
+      "nombre": "Tote Bag de Lona",
+      "categoria": "accesorios",
+      "descripcion": "Lona gruesa con manijas largas y bolsillo interno. Entra la notebook y algo más.",
+      "precio": 16900,
+      "descuento": 10,
+      "variantes": [
+        {
+          "sku": "TRM-016-CRUDO-UNICO",
+          "color": "Crudo",
+          "talle": "Único",
+          "stock": 4
+        },
+        {
+          "sku": "TRM-016-NEGRO-UNICO",
+          "color": "Negro",
+          "talle": "Único",
+          "stock": 0
+        }
+      ]
+    }
+  ]
+}
