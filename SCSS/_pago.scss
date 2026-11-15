@@ -1,0 +1,183 @@
+@use "variables" as v;
+
+// Formulario de pago y estilos compartidos con el panel.
+
+// ---------- Compatibilidad con el panel de administración ----------
+.antetitulo {
+    font-family: v.$fuente-mono;
+    font-size: 12px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: v.$gris;
+}
+
+.titulo-punto,
+.marca-punto {
+    color: v.$senal;
+}
+
+.punto-muestra {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: v.$senal;
+}
+
+.boton-secundario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 0 20px;
+    border: 1.5px solid v.$tinta;
+    border-radius: v.$radio;
+    background: transparent;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover:not(:disabled) {
+        background: v.$tinta;
+        color: v.$papel;
+    }
+
+    &:disabled {
+        opacity: .45;
+    }
+}
+
+.administracion h1,
+.administracion h2 {
+    font-weight: 900 !important;
+    font-stretch: 75%;
+    text-transform: uppercase;
+    letter-spacing: -.02em !important;
+}
+
+// ---------- Formulario de pago ----------
+.formulario-pago {
+    display: grid;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.pago-bloque {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+
+    legend {
+        font-weight: 900;
+        font-stretch: 75%;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        padding: 0;
+    }
+}
+
+.formulario-pago {
+    label {
+        display: grid;
+        gap: 6px;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+        width: 100%;
+        min-height: 44px;
+        padding: 10px 12px;
+        border: 1px solid v.$linea;
+        border-radius: v.$radio;
+        background: #fff;
+        font-size: 15px;
+        font-weight: 400;
+    }
+}
+
+.opciones-pago {
+    display: grid;
+    gap: 8px;
+
+    label {
+        position: relative;
+        display: block;
+        cursor: pointer;
+    }
+
+    input {
+        position: absolute;
+        opacity: 0;
+    }
+
+    span {
+        display: grid;
+        gap: 2px;
+        padding: 14px 16px 14px 44px;
+        border: 1.5px solid v.$linea;
+        border-radius: v.$radio;
+        background: #fff;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 16px;
+            top: 17px;
+            width: 16px;
+            height: 16px;
+            border: 1.5px solid v.$gris;
+            border-radius: 50%;
+        }
+    }
+
+    small {
+        color: v.$gris;
+        font-weight: 400;
+    }
+
+    input {
+        &:checked + span {
+            border-color: v.$tinta;
+            box-shadow: inset 0 0 0 1px v.$tinta;
+        }
+
+        &:checked + span::before {
+            border-color: v.$tinta;
+            background: radial-gradient(circle, v.$senal 0 4px, transparent 5px);
+        }
+
+        &:focus-visible + span {
+            outline: 2px solid v.$senal;
+            outline-offset: 2px;
+        }
+    }
+}
+
+.pago-off {
+    font-style: normal;
+    font-family: v.$fuente-mono;
+    font-size: 11px;
+    background: v.$senal;
+    padding: 2px 6px;
+    margin-left: 6px;
+}
+
+.pago-error {
+    color: v.$alerta;
+    background: #f7e3e1;
+    padding: 10px 12px;
+    font-size: 14px;
+}
+
+.formulario-pago .resumen-total {
+    margin-bottom: 0;
+}

@@ -1,5 +1,7 @@
-// Los datos que cambian con más frecuencia están juntos en este archivo.
-// En esta versión, precios, stock, envío y horarios sirven solamente para la demo.
+/* CONFIGURACIÓN
+ * Los datos que cambian con más frecuencia están juntos en este archivo.
+ * En esta versión, precios, stock, envío y horarios sirven solamente para la demo.
+ */
 export const CONFIGURACION = Object.freeze({
   nombreTienda: 'TRAMA',
   // Número de prueba: reemplazarlo por el WhatsApp real del cliente.

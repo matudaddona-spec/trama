@@ -1,0 +1,203 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+// Adaptación a tablets y celulares (mobile).
+
+// ---------- Adaptación a pantallas ----------
+@include m.hasta(v.$pantalla-grande) {
+    .productos-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .navegacion {
+        gap: 20px;
+    }
+
+    .banda-ofertas-fila {
+        grid-template-columns: auto 1fr;
+
+        .boton {
+            grid-column: 1 / -1;
+            justify-self: start;
+        }
+    }
+}
+
+@include m.hasta(v.$tablet) {
+    .navegacion {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: 0;
+
+        &-foto {
+            aspect-ratio: 4 / 3;
+        }
+
+        &-texto {
+            padding: 40px v.$margen-lateral 48px;
+        }
+    }
+
+    .categorias-grilla {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: none;
+        grid-auto-rows: 200px;
+    }
+
+    .categoria-grande {
+        grid-column: span 2;
+        grid-row: auto;
+    }
+
+    .productos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px 12px;
+    }
+
+    .lookbook-grilla {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .pasos-compra {
+        grid-template-columns: 1fr;
+
+        li,
+        li + li {
+            padding: 24px 0;
+            border-left: 0;
+            border-bottom: 1px solid #3a3a3a;
+        }
+    }
+
+    .ayuda {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .detalle-grid,
+    .carrito-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .detalle-foto {
+        aspect-ratio: 1;
+    }
+
+    .detalle-contenido {
+        padding: 24px 20px 28px;
+    }
+
+    .seccion-bajada {
+        text-align: left;
+    }
+
+    .herramientas-catalogo {
+        width: 100%;
+    }
+
+    .campo-busqueda {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .producto-ver {
+        opacity: 1;
+        transform: none;
+        padding: 8px;
+        font-size: 11px;
+    }
+}
+
+@include m.hasta(v.$celular) {
+    .carrito-label {
+        display: none;
+    }
+
+    .hero-datos {
+        gap: 20px;
+
+        dt {
+            font-size: 24px;
+        }
+    }
+
+    .categorias-grilla {
+        grid-auto-rows: 160px;
+    }
+
+    .categoria-nombre {
+        font-size: 22px;
+    }
+
+    .producto-nombre {
+        font-size: 15px;
+    }
+
+    .producto-precio {
+        font-size: 16px;
+    }
+
+    .filtros-categorias {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        width: 100%;
+        padding-bottom: 4px;
+
+        button {
+            flex-shrink: 0;
+        }
+    }
+
+    .dialogo-cabecera {
+        padding: 16px 20px;
+    }
+
+    .carrito-principal,
+    .carrito-resumen {
+        padding: 20px;
+    }
+
+    .opciones-entrega,
+    .campos-pareja {
+        grid-template-columns: 1fr;
+    }
+
+    .carrito-linea {
+        grid-template-columns: 64px 1fr;
+    }
+
+    .carrito-miniatura {
+        width: 64px;
+    }
+
+    .carrito-linea-acciones {
+        grid-column: 2;
+        justify-items: start;
+        grid-auto-flow: column;
+        justify-content: space-between;
+    }
+
+    .dialogo-checkout {
+        > *:not(.dialogo-cabecera) {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        > .boton-ancho {
+            width: calc(100% - 40px);
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}

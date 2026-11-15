@@ -1,0 +1,146 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+// Cinta de avisos y cabecera con la navegación.
+
+// ---------- Cinta de avisos ----------
+.cinta-avisos {
+    background: v.$tinta;
+    color: v.$hueso;
+    overflow: hidden;
+    font-family: v.$fuente-mono;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    &-pista {
+        display: flex;
+        gap: 48px;
+        width: max-content;
+        padding: 8px 0;
+        animation: deslizar 38s linear infinite;
+
+        span::before {
+            content: '●';
+            color: v.$senal;
+            margin-right: 10px;
+        }
+    }
+}
+
+@keyframes deslizar {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+// ---------- Cabecera ----------
+.cabecera {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(250, 249, 246, .92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid v.$linea;
+
+    &-fila {
+        @include m.flex-fila(space-between, 24px);
+        height: 68px;
+    }
+}
+
+.marca {
+    font-weight: 900;
+    font-stretch: 75%;
+    font-size: 30px;
+    letter-spacing: -.02em;
+    text-decoration: none;
+    line-height: 1;
+
+    sup {
+        font-size: 12px;
+        font-weight: 600;
+        color: v.$senal;
+    }
+}
+
+.navegacion {
+    display: flex;
+    gap: 32px;
+
+    a {
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: .03em;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 100%;
+            bottom: -4px;
+            height: 2px;
+            background: v.$senal;
+            transition: right .2s;
+        }
+
+        &:hover::after {
+            right: 0;
+        }
+    }
+}
+
+.acciones-cabecera {
+    @include m.flex-fila($gap: 8px);
+}
+
+.icono-link {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+
+    &:hover {
+        background: v.$hueso;
+    }
+}
+
+.carrito-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 42px;
+    padding: 0 14px;
+    background: v.$tinta;
+    color: v.$papel;
+    border: 0;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+
+    &:hover {
+        background: v.$senal;
+        color: v.$tinta;
+    }
+}
+
+.carrito-contador {
+    min-width: 22px;
+    height: 22px;
+    display: grid;
+    place-items: center;
+    padding: 0 6px;
+    border-radius: 999px;
+    background: v.$senal;
+    color: v.$tinta;
+    font-size: 12px;
+}
+
+.carrito-toggle:hover .carrito-contador {
+    background: v.$tinta;
+    color: v.$papel;
+}

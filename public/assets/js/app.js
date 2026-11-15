@@ -1,3 +1,7 @@
+/* TIENDA
+ * Catálogo, filtros, detalle de producto, bolsa (carrito) y pedido por WhatsApp.
+ * Los datos de productos y stock se leen de /datos y del servidor.
+ */
 import { CONFIGURACION } from './configuracion.js';
 import { buscarVariante, precioUnitario, normalizarCarrito, cambiarCantidad, calcularTotales, fechaLocal, calcularVentanaEnvio, validarEntrega, crearTextoPedido } from './pedidos.js';
 

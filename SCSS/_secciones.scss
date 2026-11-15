@@ -1,0 +1,115 @@
+@use "variables" as v;
+
+// Títulos de sección y grilla de categorías.
+
+// ---------- Secciones ----------
+.seccion-cabeza {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 32px;
+
+    h2,
+    &-fila h2 {
+        font-size: clamp(36px, 5vw, 64px);
+        font-weight: 900;
+        font-stretch: 75%;
+        letter-spacing: -.03em;
+        text-transform: uppercase;
+    }
+
+    &-fila {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+
+        > div {
+            display: grid;
+            gap: 10px;
+        }
+    }
+}
+
+.seccion-bajada {
+    color: v.$gris;
+    text-align: right;
+}
+
+// ---------- Categorías ----------
+.categorias {
+    padding-top: 88px;
+    padding-bottom: 40px;
+
+    &-grilla {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr;
+        grid-template-rows: repeat(2, 260px);
+        gap: 12px;
+    }
+}
+
+.categoria-tarjeta {
+    position: relative;
+    overflow: hidden;
+    background: v.$hueso;
+    text-decoration: none;
+    color: v.$papel;
+}
+
+.categoria-grande {
+    grid-row: span 2;
+}
+
+.categoria-tarjeta {
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform .5s;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0,0,0,.6), transparent 55%);
+    }
+
+    &:hover img {
+        transform: scale(1.05);
+    }
+}
+
+.categoria-nombre {
+    position: absolute;
+    left: 18px;
+    bottom: 16px;
+    z-index: 1;
+    font-weight: 900;
+    font-stretch: 75%;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: -.02em;
+    line-height: 1;
+}
+
+.categoria-flecha {
+    position: absolute;
+    right: 16px;
+    top: 14px;
+    z-index: 1;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: v.$papel;
+    color: v.$tinta;
+    font-weight: 700;
+    transition: background .2s;
+}
+
+.categoria-tarjeta:hover .categoria-flecha {
+    background: v.$senal;
+}

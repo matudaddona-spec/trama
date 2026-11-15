@@ -1,0 +1,349 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+// Colección: filtros, tarjetas de producto y banda de ofertas.
+
+// ---------- Colección ----------
+.coleccion {
+    padding-top: 64px;
+    padding-bottom: 88px;
+}
+
+.resultado-conteo {
+    font-family: v.$fuente-mono;
+    font-size: 13px;
+    color: v.$gris;
+    text-transform: uppercase;
+}
+
+.barra-catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 0;
+    margin-bottom: 28px;
+    border-top: 1.5px solid v.$tinta;
+    border-bottom: 1px solid v.$linea;
+}
+
+.filtros-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    button {
+        height: 38px;
+        padding: 0 16px;
+        border: 1px solid v.$linea;
+        border-radius: 999px;
+        background: transparent;
+        font-size: 14px;
+        font-weight: 600;
+        transition: background .15s, border-color .15s, color .15s;
+
+        &:hover {
+            border-color: v.$tinta;
+        }
+
+        &.activo {
+            background: v.$tinta;
+            border-color: v.$tinta;
+            color: v.$papel;
+        }
+    }
+
+    .filtro-promos {
+        color: v.$senal-oscuro;
+        border-color: v.$senal;
+
+        &.activo {
+            background: v.$senal;
+            color: v.$tinta;
+            border-color: v.$senal;
+        }
+    }
+}
+
+.herramientas-catalogo {
+    display: flex;
+    gap: 8px;
+}
+
+.campo-busqueda {
+    @include m.flex-fila($gap: 8px);
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid v.$linea;
+    border-radius: 999px;
+    background: #fff;
+    min-width: 240px;
+
+    svg {
+        width: 18px;
+        height: 18px;
+        color: v.$gris;
+    }
+
+    input {
+        border: 0;
+        outline: 0;
+        background: transparent;
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
+.campo-orden select {
+    height: 40px;
+    padding: 0 14px;
+    border: 1px solid v.$linea;
+    border-radius: 999px;
+    background: #fff;
+    font-size: 14px;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px 16px;
+}
+
+.producto-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.producto-imagen-boton {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: v.$hueso;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+}
+
+.producto-foto,
+.detalle-foto,
+.carrito-miniatura {
+    background: v.$hueso;
+    overflow: hidden;
+}
+
+.producto-foto {
+    width: 100%;
+    height: 100%;
+}
+
+.producto-foto img,
+.detalle-foto img,
+.carrito-miniatura img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.producto-foto img {
+    transition: transform .5s;
+}
+
+.producto-imagen-boton:hover .producto-foto img {
+    transform: scale(1.04);
+}
+
+.etiqueta-oferta {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background: v.$senal;
+    color: v.$tinta;
+    font-family: v.$fuente-mono;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 4px 8px;
+}
+
+.producto-ver {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    padding: 11px;
+    background: v.$tinta;
+    color: v.$papel;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .2s, transform .2s;
+}
+
+.producto-imagen-boton:hover .producto-ver,
+.producto-imagen-boton:focus-visible .producto-ver {
+    opacity: 1;
+    transform: none;
+}
+
+.producto-info {
+    display: grid;
+    gap: 3px;
+}
+
+.producto-categoria {
+    font-family: v.$fuente-mono;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: v.$gris;
+}
+
+.producto-nombre {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    button {
+        background: none;
+        border: 0;
+        padding: 0;
+        text-align: left;
+        font-weight: inherit;
+
+        &:hover {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+    }
+}
+
+.producto-colores {
+    font-size: 13px;
+    color: v.$gris;
+}
+
+.producto-existencias {
+    font-size: 12px;
+    font-family: v.$fuente-mono;
+    color: v.$verde;
+
+    &::before {
+        content: '● ';
+    }
+}
+
+.producto-pie {
+    @include m.flex-fila(space-between, 8px);
+    margin-top: 6px;
+}
+
+.producto-precio {
+    font-weight: 800;
+    font-size: 18px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.precio-anterior {
+    font-weight: 400;
+    font-size: 14px;
+    color: v.$gris;
+}
+
+.producto-agregar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1.5px solid v.$tinta;
+    background: transparent;
+    font-size: 20px;
+    line-height: 1;
+
+    &:hover:not(:disabled) {
+        background: v.$senal;
+        border-color: v.$senal;
+    }
+
+    &:disabled {
+        opacity: .3;
+    }
+}
+
+.producto-card {
+    &.sin-stock {
+        .producto-foto img {
+            filter: grayscale(1);
+            opacity: .6;
+        }
+
+        .producto-existencias {
+            color: v.$alerta;
+        }
+    }
+}
+
+.sin-resultados {
+    text-align: center;
+    display: grid;
+    justify-items: center;
+    gap: 12px;
+    padding: 64px 16px;
+    border: 1px dashed v.$linea;
+
+    h3 {
+        font-size: 28px;
+        font-weight: 900;
+        font-stretch: 75%;
+        text-transform: uppercase;
+    }
+}
+
+.nota-catalogo {
+    margin-top: 32px;
+    font-family: v.$fuente-mono;
+    font-size: 12px;
+    color: v.$gris;
+}
+
+.error-campo {
+    color: v.$alerta;
+    grid-column: 1 / -1;
+}
+
+// ---------- Banda de ofertas ----------
+.banda-ofertas {
+    background: v.$senal;
+    border-top: 1px solid v.$tinta;
+    border-bottom: 1px solid v.$tinta;
+
+    &-fila {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 40px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    &-numero {
+        font-size: clamp(64px, 10vw, 140px);
+        font-weight: 900;
+        font-stretch: 65%;
+        line-height: .8;
+        letter-spacing: -.04em;
+    }
+
+    h2 {
+        font-size: clamp(28px, 3.4vw, 44px);
+        font-weight: 900;
+        font-stretch: 75%;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+}

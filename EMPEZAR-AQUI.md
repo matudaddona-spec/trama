@@ -8,7 +8,8 @@ Abrir la carpeta completa en un editor, por ejemplo Visual Studio Code.
 
 - `tienda/index.html`: estructura y textos de la tienda.
 - `tienda/admin.html`: estructura del panel de stock.
-- `public/assets/css/`: colores y diseño.
+- `SCSS/`: estilos editables en SASS, separados en partials (`_variables`, `_mixins`, `_extends`, `_header`, `_hero`, etc.). Se compilan con `npm run sass` (o `npm run sass:watch`).
+- `public/assets/css/`: CSS generado por SASS (no editar a mano).
 - `public/assets/js/`: carrito, entregas, WhatsApp y acciones del panel.
 - `public/assets/js/configuracion.js`: teléfono, Instagram, envío y horarios de prueba.
 - `public/assets/img/productos/`: fotos libres de Unsplash, una por producto y color.

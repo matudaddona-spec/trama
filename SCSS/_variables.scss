@@ -1,0 +1,33 @@
+// ==========================================================
+// Variables de TRAMA · ropa urbana
+// Paleta: tinta, hueso y naranja señal. Tipografía Archivo.
+// Si cambia la marca, alcanza con modificar este archivo y recompilar.
+// ==========================================================
+
+// Colores
+$tinta: #121212;
+$tinta-suave: #2a2a2a;
+$hueso: #f1efe9;
+$papel: #faf9f6;
+$gris: #77746d;
+$linea: #d9d6cd;
+$senal: #ff5a1f;
+$senal-oscuro: #d9430e;
+$verde: #1f7a4a;
+$alerta: #b3261e;
+
+// Tipografía
+$fuente: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+$fuente-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+
+// Espaciados y medidas
+$ancho-maximo: 1320px;
+$margen-lateral: clamp(16px, 4vw, 40px);
+$radio: 2px;
+
+// Puntos de corte (mobile)
+$pantalla-grande: 1080px;
+$tablet: 860px;
+$tablet-chica: 760px;
+$celular: 520px;
+$celular-chico: 380px;

@@ -1,0 +1,88 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+// Botones de la tienda.
+
+// ---------- Botones ----------
+.boton {
+    &,
+    &-primario {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 48px;
+        padding: 0 24px;
+        border: 1.5px solid v.$tinta;
+        border-radius: v.$radio;
+        font-weight: 700;
+        font-size: 15px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: .02em;
+        background: transparent;
+        transition: background .18s, color .18s, transform .18s, border-color .18s;
+    }
+
+    &-primario {
+        background: v.$senal;
+        border-color: v.$senal;
+        color: v.$tinta;
+
+        &:hover:not(:disabled) {
+            background: v.$tinta;
+            border-color: v.$tinta;
+            color: v.$papel;
+        }
+    }
+
+    &-borde:hover:not(:disabled) {
+        background: v.$tinta;
+        color: v.$papel;
+    }
+
+    // Variantes de color armadas con el mixin boton-colores.
+    &-oscuro {
+        @include m.boton-colores(v.$papel, v.$papel, v.$tinta, $fondo: v.$tinta);
+    }
+
+    &-borde-claro {
+        border-color: v.$papel;
+        @include m.boton-colores(v.$papel, v.$papel, v.$tinta);
+    }
+
+    &-ancho {
+        width: 100%;
+    }
+
+    &:disabled,
+    &-primario:disabled {
+        opacity: .45;
+    }
+
+    &-texto {
+        background: none;
+        border: 0;
+        padding: 4px 0;
+        font-size: 14px;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        color: v.$tinta-suave;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+
+        &:hover:not(:disabled) {
+            color: v.$senal-oscuro;
+        }
+
+        &:disabled {
+            opacity: .4;
+        }
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}

@@ -1,0 +1,492 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+// Panel de stock: comparte la identidad de la tienda, con controles de trabajo.
+
+// Panel de stock: comparte la identidad de la tienda, con controles de trabajo.
+.administracion {
+    font-size: 14px;
+}
+
+.admin-contenedor {
+    width: calc(100% - 80px);
+    max-width: 1240px;
+    margin-inline: auto;
+}
+
+.admin-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    min-height: 112px;
+    border-bottom: 1px solid v.$linea;
+
+    .marca {
+        font-size: 48px;
+    }
+
+    &-acciones {
+        @include m.flex-fila($gap: 24px);
+    }
+}
+
+.acceso-privado {
+    font-size: 11px;
+    color: v.$tinta-suave;
+}
+
+.admin-presentacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    padding: 48px 0 30px;
+
+    h1 {
+        font-family: var(--serif);
+        font-size: clamp(39px, 4.8vw, 62px);
+        font-weight: 400;
+        line-height: 1.08;
+        letter-spacing: -2px;
+        margin-top: 12px;
+    }
+
+    > p {
+        font-size: 12px;
+        color: v.$tinta-suave;
+        line-height: 1.8;
+        padding-bottom: 4px;
+    }
+}
+
+.admin-nota-demostracion,
+.admin-aviso {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px 18px;
+    background: #ece6dd;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.admin-nota-demostracion .punto-muestra {
+    background: var(--coral);
+    margin-top: 8px;
+}
+
+.admin-indicadores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 24px 0 34px;
+
+    article {
+        padding: 23px 25px;
+        background: v.$papel;
+        border: 1px solid v.$linea;
+    }
+
+    span,
+    small {
+        display: block;
+    }
+
+    span {
+        font-size: 11px;
+        color: v.$tinta-suave;
+    }
+
+    strong {
+        display: block;
+        font-family: var(--serif);
+        font-size: 44px;
+        font-weight: 400;
+        line-height: 1.2;
+        margin: 5px 0 7px;
+    }
+
+    small {
+        font-size: 10px;
+        color: v.$tinta-suave;
+    }
+}
+
+.admin-seccion {
+    margin: 0 0 44px;
+    padding: 28px;
+    background: v.$papel;
+    border: 1px solid v.$linea;
+
+    &-cabecera {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 22px;
+        margin-bottom: 24px;
+    }
+}
+
+.admin-seccion h2,
+.admin-acceso h2 {
+    font-family: var(--serif);
+    font-size: 33px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    margin-top: 7px;
+}
+
+.admin-herramientas {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 15px;
+
+    input,
+    select {
+        margin: 0;
+        min-height: 44px;
+        font-size: 12px;
+    }
+}
+
+.admin-estado-consulta {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 15px 0;
+    color: v.$tinta-suave;
+    font-size: 10px;
+}
+
+.admin-tabla-marco {
+    overflow: auto;
+    max-height: 600px;
+    border: 1px solid v.$linea;
+}
+
+.admin-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+
+    th {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background: #eee8df;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: .3px;
+        padding: 13px 15px;
+    }
+
+    td {
+        padding: 14px 15px;
+        border-top: 1px solid v.$linea;
+        font-size: 12px;
+        vertical-align: middle;
+
+        &:first-child {
+            width: 36%;
+        }
+    }
+}
+
+.admin-tabla strong,
+.admin-tabla code,
+.admin-variante-talle {
+    display: block;
+}
+
+.admin-tabla code {
+    margin-top: 4px;
+    font-size: 9px;
+    color: v.$tinta-suave;
+    overflow-wrap: anywhere;
+}
+
+.admin-variante-talle {
+    color: v.$tinta-suave;
+    font-size: 10px;
+    margin-top: 3px;
+}
+
+.admin-stock {
+    display: inline-block;
+    min-width: 35px;
+    text-align: center;
+    font-weight: 600;
+    background: #e7edcf;
+    padding: 6px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+
+    &.agotado {
+        color: #7e3c36;
+        background: #f5dfd7;
+        font-size: 10px;
+    }
+}
+
+.admin-fila-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    button {
+        border: 1px solid v.$linea;
+        padding: 8px 10px;
+        font-size: 10px;
+        min-height: 35px;
+
+        &:first-child {
+            border-color: v.$tinta;
+        }
+
+        &:hover:not(:disabled) {
+            background: var(--crema);
+        }
+    }
+}
+
+.admin-fila-acciones button:disabled,
+.admin-dialogo button:disabled,
+.admin-pendiente button:disabled {
+    opacity: .45;
+}
+
+.admin-ayuda {
+    color: v.$tinta-suave;
+    font-size: 11px;
+    line-height: 1.8;
+    margin-top: 17px;
+}
+
+.admin-sin-resultados {
+    padding: 35px 15px;
+    text-align: center;
+    font-size: 13px;
+    color: v.$tinta-suave;
+}
+
+.admin-ventas {
+    display: grid;
+    gap: 13px;
+}
+
+.admin-venta {
+    border: 1px solid v.$linea;
+    padding: 19px 21px;
+
+    &-cabecera,
+    &-pie {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &-cabecera h3 {
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    &-cabecera p,
+    &-pie {
+        font-size: 10px;
+        color: v.$tinta-suave;
+    }
+
+    ul {
+        padding-left: 17px;
+        margin: 14px 0;
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    &-nota {
+        font-size: 11px;
+        padding: 10px 12px;
+        background: var(--crema);
+        margin-bottom: 12px;
+        overflow-wrap: anywhere;
+    }
+
+    &-pie .boton-texto {
+        color: v.$tinta;
+    }
+}
+
+.admin-etiqueta {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 15px;
+    background: #e7edcf;
+    font-size: 9px;
+    white-space: nowrap;
+
+    &.anulada {
+        background: #eee7ea;
+        color: v.$tinta-suave;
+    }
+}
+
+.admin-consulta-nota {
+    font-size: 10px;
+    color: v.$tinta-suave;
+}
+
+.admin-pendiente {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    background: #f5dfd7;
+    border: 1px solid #d9a38d;
+
+    h2 {
+        font-size: 15px;
+        margin-bottom: 7px;
+    }
+
+    p {
+        font-size: 11px;
+        line-height: 1.7;
+        max-width: 690px;
+    }
+
+    button {
+        flex-shrink: 0;
+    }
+}
+
+.admin-pie {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid v.$linea;
+    padding: 20px 0 30px;
+    color: v.$tinta-suave;
+    font-size: 10px;
+}
+
+.admin-dialogo {
+    width: 540px;
+    max-width: calc(100vw - 24px);
+    max-height: 94dvh;
+    padding: 30px;
+    color: v.$tinta;
+    background: v.$papel;
+    border: 0;
+    border-radius: 4px;
+    overflow: auto;
+
+    &-cabecera {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 22px;
+    }
+
+    h2 {
+        font-family: var(--serif);
+        font-size: 34px;
+        font-weight: 400;
+        letter-spacing: -1px;
+        margin-top: 8px;
+    }
+}
+
+.admin-cerrar {
+    border: 1px solid v.$linea;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 22px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.admin-producto-elegido {
+    padding: 17px 19px;
+    background: var(--crema);
+    margin-bottom: 21px;
+    font-size: 12px;
+    line-height: 1.8;
+
+    strong {
+        display: block;
+        font-size: 15px;
+        margin-bottom: 4px;
+    }
+
+    small {
+        color: v.$tinta-suave;
+    }
+}
+
+.admin-dialogo {
+    label {
+        font-size: 12px;
+        margin-bottom: 18px;
+    }
+
+    input,
+    select {
+        font-size: 13px;
+        min-height: 44px;
+    }
+}
+
+.admin-campos-pareja {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.admin-prevision {
+    padding: 12px 15px;
+    background: #e7edcf;
+    font-size: 12px;
+
+    &.invalida {
+        background: #f5dfd7;
+        color: #7e3c36;
+    }
+}
+
+.admin-error {
+    padding: 12px 15px;
+    margin: 15px 0;
+    background: #f5dfd7;
+    color: #7e3c36;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.admin-accion-completa {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.admin-acceso {
+    padding: 35px;
+    background: v.$papel;
+    border: 1px solid v.$linea;
+    margin: 20px 0 60px;
+
+    p:not(.antetitulo) {
+        margin: 16px 0 23px;
+        color: v.$tinta-suave;
+        font-size: 13px;
+    }
+
+    .boton-texto {
+        display: inline-block;
+        margin-left: 25px;
+    }
+}

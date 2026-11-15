@@ -1,0 +1,128 @@
+@use "variables" as v;
+@use "extends";
+
+// ==========================================================
+// Base: reseteo, tipografía y utilidades generales.
+// ==========================================================
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    margin: 0;
+    background: v.$papel;
+    color: v.$tinta;
+    font-family: v.$fuente;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+
+    &.dialog-abierto {
+        overflow: hidden;
+    }
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    line-height: 1;
+}
+
+p {
+    margin: 0;
+}
+
+:focus-visible {
+    outline: 2px solid v.$senal;
+    outline-offset: 3px;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+
+.iconos-definiciones {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.solo-lectores {
+    // Texto sólo para lectores de pantalla (accesibilidad).
+    @extend %solo-lectores;
+}
+
+.saltar-contenido {
+    position: absolute;
+    left: 16px;
+    top: -60px;
+    z-index: 100;
+    background: v.$tinta;
+    color: v.$papel;
+    padding: 10px 16px;
+
+    &:focus {
+        top: 12px;
+    }
+}
+
+.contenedor {
+    width: 100%;
+    max-width: v.$ancho-maximo;
+    margin: 0 auto;
+    padding: 0 v.$margen-lateral;
+}
+
+.etiqueta-mono {
+    font-family: v.$fuente-mono;
+    font-size: 12px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: v.$gris;
+}

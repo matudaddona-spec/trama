@@ -1,5 +1,7 @@
-// Reglas del carrito, sin depender de la pantalla ni de servicios externos.
-// Cada línea se identifica por SKU: el stock corresponde a color + talle.
+/* PEDIDOS
+ * Reglas del carrito, sin depender de la pantalla ni de servicios externos.
+ * Cada línea se identifica por SKU: el stock corresponde a color + talle.
+ */
 export function buscarVariante(productos, sku) {
   for (const producto of productos) {
     const variante = producto.variantes.find(item => item.sku === sku);

@@ -1,0 +1,39 @@
+// ==========================================================
+// Mixins reutilizables
+// ==========================================================
+
+// Media query para pantallas de hasta cierto ancho.
+// Uso: @include m.hasta(v.$tablet) { ... }
+@mixin hasta($ancho) {
+    @media (max-width: $ancho) {
+        @content;
+    }
+}
+
+// Media query para pantallas desde cierto ancho.
+@mixin desde($ancho) {
+    @media (min-width: $ancho) {
+        @content;
+    }
+}
+
+// Fila con flexbox y elementos centrados en vertical.
+// Los parámetros en null no generan CSS (por ejemplo, si no se pasa $gap).
+@mixin flex-fila($justificar: null, $gap: null) {
+    display: flex;
+    align-items: center;
+    justify-content: $justificar;
+    gap: $gap;
+}
+
+// Colores de un botón y su estado hover.
+// $fondo es opcional: si no se pasa, el botón conserva el fondo heredado.
+@mixin boton-colores($texto, $fondo-hover, $texto-hover, $fondo: null) {
+    background: $fondo;
+    color: $texto;
+
+    &:hover {
+        background: $fondo-hover;
+        color: $texto-hover;
+    }
+}

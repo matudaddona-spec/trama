@@ -1,5 +1,8 @@
-// Este panel usa el inventario compartido del servidor.
-// Ninguna cantidad del navegador se considera una venta hasta que la API la confirma.
+/* ADMINISTRACIÓN
+ * Panel de stock, ventas y pedidos.
+ * Este panel usa el inventario compartido del servidor.
+ * Ninguna cantidad del navegador se considera una venta hasta que la API la confirma.
+ */
 const $ = selector => document.querySelector(selector);
 const escapar = valor => String(valor ?? '').replace(/[&<>"']/g, caracter => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',

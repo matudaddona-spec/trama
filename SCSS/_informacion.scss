@@ -1,0 +1,182 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+// Lookbook, cómo comprar, ayuda y contacto.
+
+// ---------- Lookbook ----------
+.lookbook {
+    padding-top: 88px;
+    padding-bottom: 88px;
+
+    &-grilla {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+
+        figure {
+            margin: 0;
+
+            &:nth-child(even) {
+                margin-top: 48px;
+            }
+        }
+
+        img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            background: v.$hueso;
+        }
+
+        figcaption {
+            margin-top: 10px;
+            font-family: v.$fuente-mono;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: v.$gris;
+        }
+    }
+}
+
+// ---------- Cómo comprar ----------
+.como-comprar {
+    background: v.$tinta;
+    color: v.$papel;
+    padding: 88px 0;
+
+    .etiqueta-mono {
+        color: #a9a59c;
+    }
+}
+
+.pasos-compra {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid #3a3a3a;
+
+    li {
+        padding: 28px 28px 8px 0;
+        display: grid;
+        gap: 12px;
+        align-content: start;
+
+        + li {
+            padding-left: 28px;
+            border-left: 1px solid #3a3a3a;
+        }
+    }
+}
+
+.numero-paso {
+    font-family: v.$fuente-mono;
+    color: v.$senal;
+    font-size: 14px;
+}
+
+.pasos-compra {
+    h3 {
+        font-size: 30px;
+        font-weight: 900;
+        font-stretch: 75%;
+        text-transform: uppercase;
+    }
+
+    p {
+        color: #cfccc4;
+    }
+
+    small {
+        font-family: v.$fuente-mono;
+        font-size: 11px;
+        color: #8d8a83;
+    }
+}
+
+// ---------- Ayuda ----------
+.ayuda {
+    padding-top: 88px;
+    padding-bottom: 88px;
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.preguntas {
+    border-top: 1.5px solid v.$tinta;
+
+    details {
+        border-bottom: 1px solid v.$linea;
+    }
+
+    summary {
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding: 22px 0;
+        font-size: 19px;
+        font-weight: 700;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        &::after {
+            content: '+';
+            font-size: 26px;
+            font-weight: 400;
+            transition: transform .2s;
+        }
+    }
+
+    details {
+        &[open] summary::after {
+            transform: rotate(45deg);
+            color: v.$senal;
+        }
+
+        p {
+            padding: 0 0 22px;
+            color: v.$tinta-suave;
+            max-width: 62ch;
+        }
+    }
+}
+
+// ---------- Contacto ----------
+.contacto {
+    background: v.$tinta-suave;
+    color: v.$papel;
+    padding: 72px 0;
+
+    .etiqueta-mono {
+        color: #a9a59c;
+        margin-bottom: 12px;
+    }
+
+    &-fila {
+        @include m.flex-fila(space-between, 32px);
+        flex-wrap: wrap;
+    }
+
+    h2 {
+        font-size: clamp(34px, 4.6vw, 60px);
+        font-weight: 900;
+        font-stretch: 75%;
+        text-transform: uppercase;
+        letter-spacing: -.02em;
+    }
+
+    &-acciones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}

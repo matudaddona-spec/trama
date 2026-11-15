@@ -1,0 +1,35 @@
+@use "variables" as v;
+
+// Pedidos que llegan desde la web.
+
+// Pedidos de la web
+.admin-pedido {
+    .admin-venta-pie {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    &-acciones {
+        display: inline-flex;
+        gap: 16px;
+    }
+}
+
+.admin-etiqueta {
+    &.etiqueta-pagado {
+        background: #1f7a4a;
+        color: #fff;
+    }
+
+    &.etiqueta-esperando_pago,
+    &.etiqueta-esperando_transferencia {
+        background: v.$senal;
+        color: v.$tinta;
+    }
+
+    &.etiqueta-rechazado,
+    &.etiqueta-cancelado {
+        background: #f7e3e1;
+        color: #b3261e;
+    }
+}

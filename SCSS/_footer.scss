@@ -1,0 +1,61 @@
+@use "variables" as v;
+
+// Pie de página.
+
+// ---------- Pie ----------
+.pie {
+    background: v.$tinta;
+    color: v.$hueso;
+    padding-top: 32px;
+    overflow: hidden;
+
+    &-marca {
+        font-size: clamp(96px, 23vw, 340px);
+        font-weight: 900;
+        font-stretch: 62%;
+        line-height: .8;
+        letter-spacing: -.04em;
+        color: v.$senal;
+        margin: 0 0 32px -0.04em;
+    }
+
+    &-columnas {
+        display: flex;
+        justify-content: space-between;
+        gap: 32px;
+        flex-wrap: wrap;
+        padding-bottom: 32px;
+        border-bottom: 1px solid #3a3a3a;
+        color: #cfccc4;
+
+        nav {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+
+            a {
+                text-decoration: none;
+                font-weight: 600;
+                text-transform: uppercase;
+                font-size: 14px;
+                color: v.$papel;
+            }
+
+            a:hover {
+                color: v.$senal;
+            }
+        }
+    }
+
+    &-base {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        padding: 20px 0 28px;
+        font-family: v.$fuente-mono;
+        font-size: 11px;
+        text-transform: uppercase;
+        color: #8d8a83;
+    }
+}

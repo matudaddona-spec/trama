@@ -1,0 +1,8 @@
+// ==========================================================
+// TRAMA · panel de administración (stock y pedidos)
+// Se compila a public/assets/css/administracion.css con: npm run sass
+// ==========================================================
+
+@use "panel";
+@use "panel-responsive";
+@use "pedidos";

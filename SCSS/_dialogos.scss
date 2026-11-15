@@ -1,0 +1,589 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+// Diálogos: detalle de producto, bolsa, revisión de compra y aviso flotante.
+
+// ---------- Diálogos ----------
+dialog {
+    border: 0;
+    padding: 0;
+    color: v.$tinta;
+    background: v.$papel;
+    max-height: 92vh;
+    overflow: auto;
+
+    &::backdrop {
+        background: rgba(18, 18, 18, .6);
+        backdrop-filter: blur(3px);
+    }
+}
+
+.cerrar-dialogo {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border: 1px solid v.$linea;
+    border-radius: 50%;
+    background: v.$papel;
+
+    &:hover {
+        background: v.$tinta;
+        color: v.$papel;
+    }
+}
+
+.dialogo-cabecera {
+    @include m.flex-fila(space-between, 16px);
+    padding: 22px 28px;
+    border-bottom: 1px solid v.$linea;
+    position: sticky;
+    top: 0;
+    background: v.$papel;
+    z-index: 2;
+
+    h2 {
+        font-size: 32px;
+        font-weight: 900;
+        font-stretch: 75%;
+        text-transform: uppercase;
+    }
+}
+
+// Detalle de producto
+.dialogo-producto {
+    width: min(1000px, calc(100vw - 32px));
+
+    .cerrar-dialogo {
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        z-index: 3;
+    }
+}
+
+.detalle-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.detalle-foto {
+    aspect-ratio: 4 / 5;
+}
+
+.detalle-contenido {
+    padding: 40px 36px;
+    display: grid;
+    gap: 16px;
+    align-content: start;
+
+    h2 {
+        font-size: clamp(30px, 3.4vw, 44px);
+        font-weight: 900;
+        font-stretch: 75%;
+        text-transform: uppercase;
+        letter-spacing: -.02em;
+        padding-right: 40px;
+    }
+}
+
+.detalle-precio {
+    font-size: 26px;
+    font-weight: 800;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.detalle-descuento {
+    font-family: v.$fuente-mono;
+    font-size: 12px;
+    background: v.$senal;
+    padding: 3px 8px;
+    font-weight: 600;
+}
+
+.detalle-descripcion {
+    color: v.$tinta-suave;
+}
+
+.selector-campo {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+
+    legend {
+        font-family: v.$fuente-mono;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: v.$gris;
+        margin-bottom: 10px;
+        padding: 0;
+
+        strong {
+            color: v.$tinta;
+        }
+    }
+}
+
+.opciones-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.selector-color,
+.selector-talle {
+    min-width: 52px;
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid v.$linea;
+    background: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: v.$radio;
+}
+
+.selector-color:hover,
+.selector-talle:hover {
+    border-color: v.$tinta;
+}
+
+.selector-color.seleccionado,
+.selector-talle.seleccionado {
+    background: v.$tinta;
+    color: v.$papel;
+    border-color: v.$tinta;
+}
+
+.detalle-disponibilidad {
+    font-family: v.$fuente-mono;
+    font-size: 13px;
+    color: v.$verde;
+
+    &.sin-stock {
+        color: v.$alerta;
+    }
+}
+
+.detalle-compra {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+
+    .boton-primario {
+        flex: 1;
+    }
+}
+
+.cantidad-detalle {
+    display: grid;
+    gap: 6px;
+    font-family: v.$fuente-mono;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: v.$gris;
+
+    input {
+        width: 84px;
+        height: 48px;
+        padding: 0 12px;
+        border: 1px solid v.$linea;
+        background: #fff;
+        font-family: v.$fuente;
+        font-size: 16px;
+        color: v.$tinta;
+    }
+}
+
+.mensaje-ayuda {
+    font-size: 13px;
+    color: v.$gris;
+}
+
+// Bolsa
+.dialogo-carrito {
+    width: min(1060px, calc(100vw - 32px));
+}
+
+.carrito-vacio {
+    display: grid;
+    justify-items: center;
+    gap: 12px;
+    text-align: center;
+    padding: 64px 24px;
+
+    svg {
+        width: 48px;
+        height: 48px;
+        color: v.$senal;
+    }
+
+    h3 {
+        font-size: 28px;
+        font-weight: 900;
+        font-stretch: 75%;
+        text-transform: uppercase;
+    }
+
+    &:not([hidden]) + .carrito-layout {
+        display: none;
+    }
+}
+
+.carrito-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+}
+
+.carrito-principal {
+    padding: 20px 28px 28px;
+    display: grid;
+    gap: 20px;
+    align-content: start;
+}
+
+.carrito-lista-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrito-linea {
+    display: grid;
+    grid-template-columns: 84px 1fr auto;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid v.$linea;
+}
+
+.carrito-miniatura {
+    width: 84px;
+    aspect-ratio: 4 / 5;
+}
+
+.carrito-linea-info {
+    display: grid;
+    gap: 2px;
+    align-content: start;
+
+    h3 {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.25;
+    }
+
+    p {
+        font-size: 13px;
+        color: v.$gris;
+    }
+}
+
+.cantidad-selector {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 8px;
+    border: 1px solid v.$linea;
+    width: max-content;
+
+    button {
+        width: 34px;
+        height: 34px;
+        border: 0;
+        background: transparent;
+        font-size: 18px;
+
+        &:hover:not(:disabled) {
+            background: v.$hueso;
+        }
+
+        &:disabled {
+            opacity: .3;
+        }
+    }
+
+    span {
+        min-width: 30px;
+        text-align: center;
+        font-weight: 700;
+    }
+}
+
+.carrito-linea-acciones {
+    display: grid;
+    justify-items: end;
+    align-content: space-between;
+}
+
+.carrito-datos {
+    display: grid;
+    gap: 14px;
+    padding-top: 8px;
+
+    h3 {
+        font-size: 22px;
+        font-weight: 900;
+        font-stretch: 75%;
+        text-transform: uppercase;
+    }
+}
+
+.carrito-datos label,
+.copia-manual label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 4px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.carrito-datos label > input,
+.carrito-datos label > select,
+.carrito-datos label > textarea,
+.copia-manual textarea {
+    flex-basis: 100%;
+}
+
+.carrito-datos input[type="text"],
+.carrito-datos input[type="date"],
+.carrito-datos select,
+.carrito-datos textarea,
+.copia-manual textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid v.$linea;
+    border-radius: v.$radio;
+    background: #fff;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.carrito-datos [aria-invalid="true"] {
+    border-color: v.$alerta;
+    box-shadow: 0 0 0 2px rgba(179, 38, 30, .15);
+}
+
+.opcional {
+    font-weight: 400;
+    color: v.$gris;
+}
+
+.opciones-entrega {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+    label {
+        position: relative;
+        display: block;
+        cursor: pointer;
+    }
+
+    input {
+        position: absolute;
+        opacity: 0;
+    }
+
+    span {
+        display: grid;
+        gap: 2px;
+        padding: 14px 16px;
+        border: 1.5px solid v.$linea;
+        border-radius: v.$radio;
+        background: #fff;
+    }
+
+    small {
+        color: v.$gris;
+        font-weight: 400;
+    }
+
+    input {
+        &:checked + span {
+            border-color: v.$tinta;
+            box-shadow: inset 0 0 0 1px v.$tinta;
+        }
+
+        &:focus-visible + span {
+            outline: 2px solid v.$senal;
+            outline-offset: 2px;
+        }
+    }
+}
+
+.datos-modalidad {
+    display: grid;
+    gap: 12px;
+}
+
+.campos-pareja {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.carrito-resumen {
+    background: v.$hueso;
+    padding: 28px;
+    display: grid;
+    gap: 12px;
+    align-content: start;
+
+    h3 {
+        font-size: 22px;
+        font-weight: 900;
+        font-stretch: 75%;
+        text-transform: uppercase;
+    }
+}
+
+.resumen-fila {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 15px;
+}
+
+.resumen-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 14px 0;
+    margin-bottom: 4px;
+    border-top: 1.5px solid v.$tinta;
+    font-weight: 700;
+
+    strong {
+        font-size: 28px;
+        font-weight: 900;
+    }
+}
+
+#whatsapp-pedido[aria-disabled="true"] {
+    opacity: .45;
+    pointer-events: none;
+}
+
+.ruta-explicacion {
+    font-size: 12px;
+    color: v.$gris;
+    margin-top: -4px;
+}
+
+.copiar-solo {
+    justify-self: center;
+}
+
+.aviso-demo {
+    font-family: v.$fuente-mono;
+    font-size: 11px;
+    color: v.$gris;
+    text-transform: uppercase;
+}
+
+// Revisión de compra
+.dialogo-checkout {
+    width: min(600px, calc(100vw - 32px));
+
+    > *:not(.dialogo-cabecera) {
+        margin-left: 28px;
+        margin-right: 28px;
+    }
+
+    > .boton-ancho {
+        width: calc(100% - 56px);
+    }
+}
+
+#checkout-resumen {
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.checkout-lista {
+    display: grid;
+}
+
+.checkout-linea {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid v.$linea;
+
+    p {
+        font-size: 13px;
+        color: v.$gris;
+    }
+}
+
+.checkout-entrega {
+    background: v.$hueso;
+    padding: 16px;
+    display: grid;
+    gap: 4px;
+    font-size: 14px;
+
+    h3 {
+        font-size: 16px;
+    }
+}
+
+.pago-pendiente {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-top: 16px;
+    margin-bottom: 12px;
+    padding: 14px 16px;
+    border: 1px dashed v.$senal;
+}
+
+.pago-icono {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    background: v.$senal;
+    font-weight: 900;
+}
+
+.pago-pendiente p {
+    font-size: 13px;
+    color: v.$gris;
+}
+
+#volver-carrito {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 24px;
+}
+
+// Aviso flotante
+.estado {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    z-index: 200;
+    transform: translate(-50%, 20px);
+    opacity: 0;
+    pointer-events: none;
+    background: v.$tinta;
+    color: v.$papel;
+    padding: 14px 20px;
+    border-left: 4px solid v.$senal;
+    font-size: 14px;
+    max-width: calc(100vw - 32px);
+    transition: opacity .2s, transform .2s;
+
+    &.visible {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}

@@ -7,6 +7,8 @@
   },
   "scripts": {
     "install:ci": "node scripts/install-ci.mjs",
+    "sass": "npx --yes sass@1.94.2 --no-source-map SCSS/estilos.scss:public/assets/css/estilos.css SCSS/administracion.scss:public/assets/css/administracion.css",
+    "sass:watch": "npx --yes sass@1.94.2 --watch --no-source-map SCSS/estilos.scss:public/assets/css/estilos.css SCSS/administracion.scss:public/assets/css/administracion.css",
     "dev": "node scripts/run-framework.mjs dev",
     "build": "node scripts/run-framework.mjs build",
     "start": "node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js dev --config dist/server/wrangler.json --local --persist-to .wrangler/state --ip 127.0.0.1 --inspector-port 0",

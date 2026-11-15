@@ -1,0 +1,17 @@
+// ==========================================================
+// TRAMA · ropa urbana — hoja de estilos principal de la tienda
+// Se compila a public/assets/css/estilos.css con: npm run sass
+// Cada partial corresponde a una parte de la página.
+// ==========================================================
+
+@use "base";
+@use "botones";
+@use "header";
+@use "hero";
+@use "secciones";
+@use "coleccion";
+@use "informacion";
+@use "footer";
+@use "dialogos";
+@use "responsive";
+@use "pago";
